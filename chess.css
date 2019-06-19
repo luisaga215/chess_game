@@ -1,0 +1,59 @@
+.square-white {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  display: inline-block;
+  height: 75px;
+  width: 75px;
+  background-color: white;
+  border-width: .5px;
+  border-style: solid;
+  transition: all .5s ease;
+}
+
+.square-black {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  display: inline-block;
+  height: 75px;
+  width: 75px;
+  background-color: #5e2129;
+  /*#1034a6; blue */
+  border-width: .5px;
+  border-style: solid;
+  transition: all .5s ease;
+}
+
+.left-border {
+  border-left-style: solid;
+  border-left-width: 1.5px;
+}
+
+.top-border {
+  border-top-style: solid;
+  border-top-width: 1.5px;
+}
+
+.right-border {
+  border-right-style: solid;
+  border-right-width: 1.5px;
+}
+
+.bottom-border {
+  border-bottom-style: solid;
+  border-bottom-width: 1.5px;
+}
+
+.s:hover {
+  bottom: 4px;
+  left: 4px;
+  opacity: .7;
+  z-index: 1000;
+}
+
+.board {
+  width: 100%;
+  text-align: center;
+  font-size: 0;
+}

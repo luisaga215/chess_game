@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="chess.css">
+</head>
+
+<body>
+  <div class="board">
+    <div class="s square-white left-border top-border" player="black" piece="rook" row="8" col="1"></div>
+    <div class="s square-black top-border" player="black" piece="knight" row="8" col="2"></div>
+    <div class="s square-white top-border" player="black" piece="bishop" row="8" col="3"></div>
+    <div class="s square-black top-border" player="black" piece="queen" row="8" col="4"></div>
+    <div class="s square-white top-border" player="black" piece="king" row="8" col="5"></div>
+    <div class="s square-black top-border" player="black" piece="bishop" row="8" col="6"></div>
+    <div class="s square-white top-border" player="black" piece="knight" row="8" col="7"></div>
+    <div class="s square-black top-border right-border" player="black" piece="rook" row="8" col="8"></div>
+    <br>
+    <div class="s square-black left-border" player="black" piece="pawn" row="7" col="1"></div>
+    <div class="s square-white" player="black" piece="pawn" row="7" col="2"></div>
+    <div class="s square-black" player="black" piece="pawn" row="7" col="3"></div>
+    <div class="s square-white" player="black" piece="pawn" row="7" col="4"></div>
+    <div class="s square-black" player="black" piece="pawn" row="7" col="5"></div>
+    <div class="s square-white" player="black" piece="pawn" row="7" col="6"></div>
+    <div class="s square-black" player="black" piece="pawn" row="7" col="7"></div>
+    <div class="s square-white right-border" player="black" piece="pawn" row="7" col="8"></div>
+    <br>
+    <div class="s square-white left-border" player="" piece="" row="6" col="1"></div>
+    <div class="s square-black" player="" piece="" row="6" col="2"></div>
+    <div class="s square-white" player="" piece="" row="6" col="3"></div>
+    <div class="s square-black" player="" piece="" row="6" col="4"></div>
+    <div class="s square-white" player="" piece="" row="6" col="5"></div>
+    <div class="s square-black" player="" piece="" row="6" col="6"></div>
+    <div class="s square-white" player="" piece="" row="6" col="7"></div>
+    <div class="s square-black right-border" player="" piece="" row="6" col="8"></div>
+    <br>
+    <div class="s square-black left-border" player="" piece="" row="5" col="1"></div>
+    <div class="s square-white" player="" piece="" row="5" col="2"></div>
+    <div class="s square-black" player="" piece="" row="5" col="3"></div>
+    <div class="s square-white" player="" piece="" row="5" col="4"></div>
+    <div class="s square-black" player="" piece="" row="5" col="5"></div>
+    <div class="s square-white" player="" piece="" row="5" col="6"></div>
+    <div class="s square-black" player="" piece="" row="5" col="7"></div>
+    <div class="s square-white right-border" player="" piece="" row="5" col="8"></div>
+    <br>
+    <div class="s square-white left-border" player="" piece="" row="4" col="1"></div>
+    <div class="s square-black" player="" piece="" row="4" col="2"></div>
+    <div class="s square-white" player="" piece="" row="4" col="3"></div>
+    <div class="s square-black" player="" piece="" row="4" col="4"></div>
+    <div class="s square-white" player="" piece="" row="4" col="5"></div>
+    <div class="s square-black" player="" piece="" row="4" col="6"></div>
+    <div class="s square-white" player="" piece="" row="4" col="7"></div>
+    <div class="s square-black right-border" player="" piece="" row="4" col="8"></div>
+    <br>
+    <div class="s square-black left-border" player="" piece="" row="3" col="1"></div>
+    <div class="s square-white" player="" piece="" row="3" col="2"></div>
+    <div class="s square-black" player="" piece="" row="3" col="3"></div>
+    <div class="s square-white" player="" piece="" row="3" col="4"></div>
+    <div class="s square-black" player="" piece="" row="3" col="5"></div>
+    <div class="s square-white" player="" piece="" row="3" col="6"></div>
+    <div class="s square-black" player="" piece="" row="3" col="7"></div>
+    <div class="s square-white right-border" player="" piece="" row="3" col="8"></div>
+    <br>
+    <div class="s square-white left-border" player="white" piece="pawn" row="2" col="1"></div>
+    <div class="s square-black" player="white" piece="pawn" row="2" col="2"></div>
+    <div class="s square-white" player="white" piece="pawn" row="2" col="3"></div>
+    <div class="s square-black" player="white" piece="pawn" row="2" col="4"></div>
+    <div class="s square-white" player="white" piece="pawn" row="2" col="5"></div>
+    <div class="s square-black" player="white" piece="pawn" row="2" col="6"></div>
+    <div class="s square-white" player="white" piece="pawn" row="2" col="7"></div>
+    <div class="s square-black right-border" player="white" piece="pawn" row="2" col="8"></div>
+    <br>
+    <div class="s square-black left-border bottom-border" player="white" piece="rook" row="1" col="1"></div>
+    <div class="s square-white bottom-border" player="white" piece="knight" row="1" col="2"></div>
+    <div class="s square-black bottom-border" player="white" piece="bishop" row="1" col="3"></div>
+    <div class="s square-white bottom-border" player="white" piece="queen" row="1" col="4"></div>
+    <div class="s square-black bottom-border" player="white" piece="king" row="1" col="5"></div>
+    <div class="s square-white bottom-border" player="white" piece="bishop" row="1" col="6"></div>
+    <div class="s square-black bottom-border" player="white" piece="knight" row="1" col="7"></div>
+    <div class="s square-white right-border bottom-border" player="white" piece="rook" row="1" col="8"></div>
+  </div>
+
+  <script src="chess.js"></script>
+</body>
+
+
+</html>
