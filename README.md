@@ -1,9 +1,9 @@
 # chess_game
 
-This is a "simple" chess game I created using HTML, CSS and Javascript with jQuery, feel free to download, modify and ask questions!
+<h3>This is a "simple" chess game I created using HTML, CSS and Javascript with jQuery, feel free to download, modify and ask questions!</h3>
+
+![./Pieces/board.png]()
 
 
 
-
-
-All the icons were taken from https://flaticon.com
+All the icons were taken from https://www.flaticon.com
