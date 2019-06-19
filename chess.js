@@ -56,14 +56,21 @@ $(document).ready(function() {
         col: Number(col)
       }
       return
-      /*There is an already selected piece and the clicked space is empty, lets check if it is
-      possible to move the piece */
-    } else if (player == "" && currentPieceSel.player != "") {
+      /*Check cases where there is an already selected piece and the clicked space is not a piece of the current player*/
+    } else if (player != turn && currentPieceSel.player != "") {
       if (currentPieceSel.piece == "pawn") {
-        if (pawnCanMove(row, col)) {
-          movePiece(row, col)
+        if (player == "") {
+          if (pawnCanMove(row, col)) {
+            movePiece(row, col)
+          } else {
+            console.log("invalid move")
+          }
         } else {
-          console.log("invalid move")
+          if (pawnCanEat(row, col)) {
+            movePiece(row, col)
+          } else {
+            console.log("invalid move");
+          }
         }
       } else if (currentPieceSel.piece == "rook") {
         if (rookCanMove(row, col)) {
@@ -97,13 +104,12 @@ $(document).ready(function() {
         }
       }
     }
-
   })
 
   /*Returns true if the selected pawn in currentPieceSel dictionary can move to t_row, t_col pos*/
   function pawnCanMove(t_row, t_col) {
+    let col = currentPieceSel.col
     if (currentPieceSel.player == "white") {
-      let col = currentPieceSel.col;
       if (currentPieceSel.row == 2 && t_row == 4 && t_col == currentPieceSel.col) {
         if ($("[row='3'][col=" + col + "]").attr("player") == "") {
           return true
@@ -116,7 +122,6 @@ $(document).ready(function() {
         return false
       }
     } else {
-      let col = currentPieceSel.col;
       if (currentPieceSel.row == 7 && t_row == 5 && t_col == currentPieceSel.col) {
         if ($("[row='6'][col=" + col + "]").attr("player") == "") {
           return true
@@ -124,6 +129,25 @@ $(document).ready(function() {
           return false
         }
       } else if (t_row == (currentPieceSel.row - 1) && t_col == currentPieceSel.col) {
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+
+  function pawnCanEat(t_row, t_col) {
+    let row = currentPieceSel.row
+    let col = currentPieceSel.col
+
+    if (currentPieceSel.player == "white") {
+      if ((t_row == row + 1 && t_col == col + 1) || (t_row == row + 1 && t_col == col - 1)) {
+        return true
+      } else {
+        return false
+      }
+    } else {
+      if ((t_row == row + -1 && t_col == col + 1) || (t_row == row + -1 && t_col == col - 1)) {
         return true
       } else {
         return false
@@ -173,6 +197,7 @@ $(document).ready(function() {
     }
   }
 
+  /*Returns true if the selected horse in currentPieceSel can move to t_row, t_col coordinates*/
   function knightCanMove(t_row, t_col) {
     let row = currentPieceSel.row;
     let col = currentPieceSel.col;
@@ -183,6 +208,7 @@ $(document).ready(function() {
     }
   }
 
+  /*Returns true if the selected bishop in currentPieceSel can move to t_row, t_col coordinates*/
   function bishopCanMove(t_row, t_col) {
     let row = currentPieceSel.row
     let col = currentPieceSel.col
@@ -230,6 +256,7 @@ $(document).ready(function() {
     }
   }
 
+  /*Returns true if the selected queen in currentPieceSel can move to t_row, t_col coordinates*/
   function queenCanMove(t_row, t_col) {
     if (rookCanMove(t_row, t_col) || bishopCanMove(t_row, t_col)) {
       return true
@@ -238,6 +265,7 @@ $(document).ready(function() {
     }
   }
 
+  /*Returns true if the selected king in currentPieceSel can move to t_row, t_col coordinates*/
   function kingCanMove(t_row, t_col) {
     let row = currentPieceSel.row
     let col = currentPieceSel.col
@@ -286,5 +314,4 @@ $(document).ready(function() {
       turn = "white"
     }
   }
-
 });
