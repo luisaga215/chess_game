@@ -90,7 +90,11 @@ $(document).ready(function() {
           console.log("invalid move")
         }
       } else if (currentPieceSel.piece == "king") {
-
+        if (kingCanMove(row, col)) {
+          movePiece(row, col)
+        } else {
+          console.log("invalid move")
+        }
       }
     }
 
@@ -235,8 +239,13 @@ $(document).ready(function() {
   }
 
   function kingCanMove(t_row, t_col) {
-
-
+    let row = currentPieceSel.row
+    let col = currentPieceSel.col
+    if ((Math.abs(t_row - row) == 1 && Math.abs(t_col - col) == 1) || (Math.abs(t_row - row) == 1 && t_col == col) || (Math.abs(t_col - col) == 1 && t_row == row)) {
+      return true
+    } else {
+      return false
+    }
   }
   /*After checking if it is possible to move the piece to a blank space, call this function to
   update the piece in currentPieceSel to t_row, t_col coordinates*/
